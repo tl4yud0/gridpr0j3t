@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clorofila</title>
+    <style>
+        body{
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+        }
+        .menu{
+            grid-area: header;
+            box-shadow: 0 2px 20px 5px #f2f2f2;
+        }
+        .menu-navbar{
+            padding: 0 3em;
+            display: grid;
+            grid-template-columns: 25% 1fr 20%;
+            grid-auto-rows: 70px;
+            grid-template-areas: "brand options buttons"
+                                "subbrand suboptions .";
+            grid-gap: 10px;
+        }
+        .menu-navbar-brand{
+            grid-area: brand;
+        }
+        .logo{
+            width: 100px;
+        }
+        .menu-navbar-options{
+            grid-area: options;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            justify-content: flex-start;
+        }
+        .menu-navbar-options a {
+            padding-right: 25px;
+        }
+        .menu-navbar-buttons{
+            grid-area: buttons;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            justify-content: flex-end;
+        }
+        .menu-navbar-buttons a{
+            margin-right: 15px;
+        }
+        .menu-navbar-subbrand{
+            grid-area: subbrand;
+        }
+        .sublogo{
+            width: 100px;
+        }
+        .menu-navbar-suboptions{
+            grid-area: suboptions;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            justify-content: flex-start;
+        }
+        .menu-navbar-suboptions a{
+            margin-right: 15px;
+        }
+        .hero{
+            background: #23475b;
+            color: white;
+            padding: 30px 15px;
+            display: grid;
+            grid-template-columns: minmax(auto,100%);
+            justify-content: center;
+        }
+        
+        .hero-container{
+            padding: 0 3em;
+            display: grid;
+            grid-template-columns: 60% 1fr 200px;
+            grid-template-areas: "hero-title . ."
+                                "hero-description . ."
+                                "hero-cta . hero-redes";
+            grid-gap: 10px;
+            
+        }
+        .hero-title{
+            font-size:  80px;
+            font-weight: bold;
+            margin: 0;
+            color: antiquewhite;
+            display: flex;
+            align-items: center;
+            grid-area: hero-title;
+        }
+        .hero-description{
+            font-size:  22px;
+            font-weight: normal;
+            grid-area: hero-description;
+        }
+        .hero-cta{
+            font-size:  18px;
+            font-weight: normal;
+            grid-area: hero-cta;
+            max-width: 200px;
+        }
+        .hero-redes{
+             display: flex;
+            align-items:flex-end;
+            grid-area: hero-redes;
+            justify-content: flex-end;
+        }
+        .hero-redes a{
+            color: aliceblue;
+        }
+        @media screen and (max-width: 980px){
+            
+            .menu-navbar{
+            grid-template-columns: 1fr;
+            grid-template-areas: "brand "
+                                "options "
+                                "buttons "
+                                "subbrand "
+                                "suboptions ";
+            
+        }
+    </style>
+</head>
+
+<body>
+    <header class="menu" id="Menu">
+        <nav class="menu-navbar">
+               <div class="menu-navbar-brand">
+                    <figure class="logo">
+                        <img src="images/invision_logo_pink.svg" alt="">
+                    </figure>
+                </div>
+                <div class="menu-navbar-options">
+                    <a href="">Product</a>
+                    <a href="">Education</a>
+                    <a href="">Blog</a>
+                    <a href="">Community & Events</a>
+                    <a href="">Enterprise</a>
+                </div>
+                <div class="menu-navbar-buttons">
+                    <a href="">Sign in</a>
+                    <button>Sign up free</button>
+                </div>
+                <div class="menu-navbar-subrand">
+                    <figure class="sublogo">
+                        <img src="images/invision_logo_pink.svg" alt="">
+                    </figure>
+                </div>
+                <div class="menu-navbar-suboptions">
+                    <a href="">Design Maturity Nodel</a>
+                    <a href="">Books</a>
+                    <a href="">Podcast</a>
+                    <a href="">Conversations</a>
+                </div>
+        </nav>
+    </header>
+    <div class="hero">
+    <section class="hero-container">
+			<h1 class="hero-title">
+                The New Design Frontier
+            </h1>
+            <div class="hero-description">
+                <p>An industry-spanning report that redefines design maturity today. InVision surveyed thousands of companies to explore the relationship between design practices and business performance. Explore the highlights here, and download the full report now to transform the way you work.</p>
+            </div>
+            <button class="hero-cta">Get the full report</button>
+            <nav class="hero-redes">
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+            </nav>
+		</section>
+       </div>
+</body>
+</html>
