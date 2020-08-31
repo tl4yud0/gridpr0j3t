@@ -9,7 +9,26 @@
         body{
             font-family: 'Lato', sans-serif;
             margin: 0;
+            background: #000000;
         }
+        *{
+             outline:1px solid red; */
+        }
+        body {
+            font-family: 'Libre Franklin';
+            margin: 0;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Libre Franklin';
+            font-weight: normal;
+        }
+        
         .menu{
             grid-area: header;
             box-shadow: 0 2px 20px 5px #f2f2f2;
@@ -17,7 +36,7 @@
         .menu-navbar{
             padding: 0 3em;
             display: grid;
-            grid-template-columns: 25% 1fr 20%;
+            grid-template-columns: 13% 1fr 22%;
             grid-auto-rows: 70px;
             grid-template-areas: "brand options buttons"
                                 "subbrand suboptions .";
@@ -25,9 +44,12 @@
         }
         .menu-navbar-brand{
             grid-area: brand;
+            display: flex;
+            align-items: center;
         }
         .logo{
-            width: 100px;
+            margin: 0;
+            
         }
         .menu-navbar-options{
             grid-area: options;
@@ -37,7 +59,13 @@
             justify-content: flex-start;
         }
         .menu-navbar-options a {
-            padding-right: 25px;
+            padding-right: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu-navbar-options span {
+            padding-right: 5px;
+            font-size: 16px;
         }
         .menu-navbar-buttons{
             grid-area: buttons;
@@ -48,12 +76,24 @@
         }
         .menu-navbar-buttons a{
             margin-right: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu-navbar-buttons button{
+            color: white;
+            background-color: #C60032;
+            border: 0;
+            padding: 5px 20px;
+            cursor: pointer;
+            
         }
         .menu-navbar-subbrand{
             grid-area: subbrand;
+            margin: 0;
         }
-        .sublogo{
-            width: 100px;
+        .menu-navbar-subrand h4{
+            color: white;
+            font-weight: bold;
         }
         .menu-navbar-suboptions{
             grid-area: suboptions;
@@ -64,37 +104,53 @@
         }
         .menu-navbar-suboptions a{
             margin-right: 15px;
+            color: white;
+            text-decoration: none;
         }
         .hero{
-            background: #23475b;
+            background: #000;
             color: white;
-            padding: 30px 15px;
             display: grid;
             grid-template-columns: minmax(auto,100%);
             justify-content: center;
+            height: 1000px;
         }
         
         .hero-container{
             padding: 0 3em;
             display: grid;
-            grid-template-columns: 60% 1fr 200px;
+            align-content: center;
+            grid-template-columns: 50% 1fr 50px;
             grid-template-areas: "hero-title . ."
                                 "hero-description . ."
                                 "hero-cta . hero-redes";
             grid-gap: 10px;
+            height: 100%;
+            background-image: url('images/background.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             
+        }
+        .hero-container button{
+            color: white;
+            background-color: #C60032;
+            border: 0;
+            padding: 5px 20px;
+            cursor: pointer;
+            height: 50px;
         }
         .hero-title{
             font-size:  80px;
             font-weight: bold;
             margin: 0;
-            color: antiquewhite;
+            color: white;
             display: flex;
             align-items: center;
             grid-area: hero-title;
         }
         .hero-description{
-            font-size:  22px;
+            font-size:  24px;
             font-weight: normal;
             grid-area: hero-description;
         }
@@ -109,11 +165,12 @@
             align-items:flex-end;
             grid-area: hero-redes;
             justify-content: flex-end;
+            flex-direction: column;
         }
         .hero-redes a{
             color: aliceblue;
         }
-        @media screen and (max-width: 980px){
+        @media screen and (max-width: 1024px){
             
             .menu-navbar{
             grid-template-columns: 1fr;
@@ -124,6 +181,13 @@
                                 "suboptions ";
             
         }
+            .hero-container{
+            grid-template-columns: 1fr;
+            grid-template-areas: "hero-title "
+                                "hero-description "
+                                "hero-cta "
+                                "hero-redes "
+            }
     </style>
 </head>
 
@@ -132,24 +196,22 @@
         <nav class="menu-navbar">
                <div class="menu-navbar-brand">
                     <figure class="logo">
-                        <img src="images/invision_logo_pink.svg" alt="">
+                        <img width="110px" src="images/clorofila.png" alt="logo-clorofila-design">
                     </figure>
                 </div>
                 <div class="menu-navbar-options">
-                    <a href="">Product</a>
-                    <a href="">Education</a>
-                    <a href="">Blog</a>
-                    <a href="">Community & Events</a>
-                    <a href="">Enterprise</a>
+                    <a href=""><span>Product</span><img src="images/flecha.png" alt=""></a>
+                    <a href=""><span>Education</span><img src="images/flecha.png" alt=""></a>
+                    <a href=""><span>Blog</span><img src="images/flecha.png" alt=""></a>
+                    <a href=""><span>Community & Events</span><img src="images/flecha.png" alt=""></a>
+                    <a href=""><span>Enterprise</span></a>
                 </div>
                 <div class="menu-navbar-buttons">
                     <a href="">Sign in</a>
-                    <button>Sign up free</button>
+                    <a href=""> <span><button>Sign up free</button></span> </a> 
                 </div>
                 <div class="menu-navbar-subrand">
-                    <figure class="sublogo">
-                        <img src="images/invision_logo_pink.svg" alt="">
-                    </figure>
+                    <h4>Design & code</h4>
                 </div>
                 <div class="menu-navbar-suboptions">
                     <a href="">Design Maturity Nodel</a>
@@ -162,17 +224,16 @@
     <div class="hero">
     <section class="hero-container">
 			<h1 class="hero-title">
-                The New Design Frontier
+                Développer d’empowerment
             </h1>
             <div class="hero-description">
                 <p>An industry-spanning report that redefines design maturity today. InVision surveyed thousands of companies to explore the relationship between design practices and business performance. Explore the highlights here, and download the full report now to transform the way you work.</p>
             </div>
             <button class="hero-cta">Get the full report</button>
             <nav class="hero-redes">
-                <a href="">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-                <a href="">4</a>
+                <a href=""><img src="images/facebook.png" alt=""></a>
+                <a href=""><img src="images/instagram.png" alt=""></a>
+                <a href=""><img src="images/linkedin.png" alt=""></a>
             </nav>
 		</section>
        </div>
